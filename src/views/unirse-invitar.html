@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    <%= title%>
+  </title>
+  <!-- custom css -->
+  <link rel="stylesheet" href="/css/unirse-invitar.css">
+  <%- include ('partials/head.html')%>
+</head>
+
+<body>
+  <nav class="navbar navbar-light fixed-top" id="navegar">
+    <a class="navbar-brand" href="#">
+      <!-- <img src="/img/carrito.png" width="30" height="30" alt=""> -->
+      <i class="fas fa-shopping-cart"><span class="marca">Mercapp</span></i>
+    </a>
+    <!-- boton dropdown -->
+    <div class="btn-group dropstart">
+      <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Opciones
+      </a>
+
+      <div class="dropdown-menu dropdown-menu-center" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" href="/unirse-invitar">Unirse/invitar</a>
+        <a class="dropdown-item" href="#">Configuracion</a>
+        <a class="dropdown-item" href="/users/salir">Salir</a>
+      </div>
+    </div>
+  </nav>
+
+  <% for(var i=0; i<warning.length; i++) {%>
+
+    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+        <%= warning[i].text %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+ <% } %>
+ <% for(var i=0; i<joined.length; i++) {%>
+
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <%= joined[i].text %>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+<% } %>
+
+<div class="card mx-auto mt-3" style="width: 20rem;">
+  <div class="card-body">
+    <div>
+      <div class="buttons d-flex justify-content-evenly">
+        <h3>Invitar:</h3><input type="text" id="copy" readonly ><i id="copyIco"
+          class="fas fa-copy"></i></input>
+      </div>
+      <p class="mt-3  info">Envia este codigo a alguien para que se una a tu grupo.</p>
+    </div>
+    <div>
+      <form action="/join-group" method="post">
+        <div class="buttons d-flex justify-content-evenly mt-4">
+          <h3>Unirse:</h3><input type="text" name='code' id="paste" onkeypress="CheckSpace(event)" required><i id='pasteIco' class="fas fa-clone" ></i></input>
+        </div>
+        <p class="mt-3  info">Pega aquí el codigo Del grupo al que te deseas unir.</p>
+    </div>
+    <div class="text-center">
+      <button class="mx-auto mt-4" id="agregarGrupo"type="submit">Confirmar</button>
+    </div>
+    </form>
+  
+  
+    </div>
+  </div>
+
+  <section class="mt-5  mt-4">
+
+
+    <div class="card-container d-flex justify-content-evenly" id='groupCont'>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Grupo A</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary text-center d-block">Salir</a>
+  
+        </div>
+      </div>
+
+
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Grupo B</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary text-center d-block">Salir</a>
+  
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Grupo C</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary text-center d-block">Salir</a>
+  
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <footer class="footer-container">
+    <h4>ver 1.0.0</h4>
+  </footer>
+
+  <%- include ('partials/footer.html')%>
+    <script src="/scripts/unirse-invitar.js"></script>
+</body>
+
+</html>

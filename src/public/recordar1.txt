@@ -1,0 +1,21 @@
+<div class="container-carrusel mt-4 ms-4 ">
+    <div class="gallery js-flickity" id="carusel"
+      data-flickity='{ "freeScroll": true, "contain": true, "prevNextButtons": false, "pageDots": false }'
+      data-flickity-options='{ "wrapAround": true }'>
+      <div class="gallery-cell">
+        <div class="container-slide">
+          <h1 class="producto">Manzana</h1>
+          <i class="fas fa-apple-alt fa-2x proIco"></i>
+          <div class="container-input">
+            <input type="text" placeholder="Cantidad">
+            <input type="text" placeholder="Marca">
+          </div>
+          <div class="container-button">
+            <button><i class="far fa-check-circle fa-2x"></i></button>
+            <button><i class="far fa-times-circle fa-2x"></i></button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title%></title>
+    <!-- custom css -->
+    <link rel="stylesheet" href="/css/log.css">
+    <%- include ('partials/head.html')%>
+</head>
+<body>
+   
+    <% for(var i=0; i<errors.length; i++) {%>
+
+        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+            <%= errors[i].text %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+     <% } %>
+     <% for(var i=0; i<success.length; i++) {%>
+
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <%= success[i].text %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+     <% } %>
+
+     <% if (eWarn != '') { %>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <%= eWarn %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        <%} %>
+        <% if (error != '') { %>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <%= error %>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            <%} %>
+    <div class="container login-container">
+        <div class="row">
+            <div class="col-md-6 login-form-1">
+                <h3>INGRES0</h3>
+                <form action="/users/signin" method="POST">
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Correo *" value="" name="Correo" onkeypress="CheckSpace(event)"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Contraseña *" value="" name="contraseña" onkeypress="CheckSpace(event)" />
+                    </div>
+                    
+                    <div class="form-group" id="entrar">
+                        <input type="submit" class="btnSubmit" value="Entrar" />
+                    </div>
+                    <div class="form-group linker">
+                        <a href="#" class="ForgetPwd">Recordar Contraseña</a>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6 login-form-2">
+                <h3>REGISTRO</h3>
+                <form action="/users/signup" method="POST">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Nombre *" value="" name="Nombre" onkeypress="CheckSpace(event)" />
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Correo *" value="" name="Correo" onkeypress="CheckSpace(event)" />
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Contraseña *" value="" name="contraseña" onkeypress="CheckSpace(event)" />
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Confirmar Contraseña *" value=""  onkeypress="CheckSpace(event)" name="confirmar_contraseña" />
+                    </div>
+                    <div class="form-group" id="registro">
+                        <input type="submit" class="btnSubmit" value="Registrar" />
+                    </div>
+                    <div class="form-group linker">
+
+                        <a href="#" class="ForgetPwd" value="Login">Recordar Contraseña</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <%- include ('partials/footer.html')%>
+    <script src="/scripts/log.js"></script>
+</body>
+</html>

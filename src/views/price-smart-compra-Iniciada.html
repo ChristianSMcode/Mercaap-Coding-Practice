@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title%></title>
+
+    <link rel="stylesheet" href="/css/compra-price-smart.css">
+    <%- include ('partials/head.html')%>
+</head>
+<body>
+    <nav class="navbar navbar-light fixed-top" id="navegar">
+        <a class="navbar-brand" href="#">
+          <!-- <img src="/img/carrito.png" width="30" height="30" alt=""> -->
+          <i class="fas fa-shopping-cart"><span class="marca">Mercapp</span></i>
+        </a>
+        <!-- boton dropdown -->
+        <div class="btn-group dropstart">
+          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Opciones
+          </a>
+    
+          <div class="dropdown-menu dropdown-menu-center" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="#">Unirse/invitar</a>
+            <a class="dropdown-item" href="#">Configuracion</a>
+            <a class="dropdown-item" href="/users/salir">Salir</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="options d-flex justify-content-between mt-3 mb-3 flex-wrap ms-3 mr-3">
+        <div class="but fv">
+          <h3>FrutasVegetales</h3>
+        </div>
+        <div class="but cong">
+          <h3>Congelados</h3>
+        </div>
+        <div class="but gran">
+          <h3>Granos</h3>
+        </div>
+        <div class="but as">
+          <h3>Aseo</h3>
+        </div>
+        <div class="but tec">
+          <h3>Tecnología</h3>
+        </div>
+        <div class="but otr">
+          <h3>Otros</h3>
+        </div>
+      </div>
+      <div class="but todo">
+        <h3>Todo</h3>
+      </div>
+
+      <div class="elementos-container">
+          <ul class="lista">
+              
+             
+              
+       
+
+          </ul>
+      </div>
+   
+
+      
+
+      <footer class="footer-container">
+        <h4>ver 1.0.0</h4>
+      </footer>
+
+
+    <%- include ('partials/footer.html')%>
+    <script src="/scripts/compra.js"></script>
+</body>
+</html>
